@@ -133,18 +133,18 @@
         $('#card').append(card_html);
     });
 
-    // Https를 적용 후 api요청을 http로 보내면 발생하는 브라우저 보안 에러발생(Mixed Content에러)
-    // 
-    let url = 'https://spartacodingclub.shop/sparta_api/weather/seoul';
-    fetch(url).then(res => res.json()).then(date => {
-        let temperature = date['temp'];
-        console.log(temperature);
-        if (temperature < 20) {
-            $('#temperature').text('추워요');
-        } else {
-            $('#temperature').text('더워요');
-        }
-    })
+    // // Https를 적용 후 api요청을 http로 보내면 발생하는 브라우저 보안 에러발생(Mixed Content에러)
+    // // 해결 방법들을 찾아서 해보았으나 해결이 안되어서 주석처리 합니다.
+    // let url = 'https://spartacodingclub.shop/sparta_api/weather/seoul';
+    // fetch(url).then(res => res.json()).then(date => {
+    //     let temperature = date['temp'];
+    //     console.log(temperature);
+    //     if (temperature < 20) {
+    //         $('#temperature').text('추워요');
+    //     } else {
+    //         $('#temperature').text('더워요');
+    //     }
+    // })
 
 
 
