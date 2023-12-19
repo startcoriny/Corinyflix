@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
@@ -133,8 +133,9 @@
         $('#card').append(card_html);
     });
 
-
-    let url = 'http://spartacodingclub.shop/sparta_api/weather/seoul';
+    // Https를 적용 후 api요청을 http로 보내면 발생하는 브라우저 보안 에러발생(Mixed Content에러)
+    // 
+    let url = 'https://spartacodingclub.shop/sparta_api/weather/seoul';
     fetch(url).then(res => res.json()).then(date => {
         let temperature = date['temp'];
         console.log(temperature);
